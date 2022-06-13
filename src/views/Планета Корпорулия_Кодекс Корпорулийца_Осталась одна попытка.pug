@@ -1,0 +1,37 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Планета Корпорулия_Кодекс Корпорулийца_Осталась одна попытка'
+  - var bodyClass = ''
+block content
+  .body-container
+    .page__border
+      include _includes/blocks/preloader
+      .page.page-main-edinuses(data-scrollbar)
+        .page-content(fade-in-preloader)
+          +header-back('Вернуться назад')
+          section.corporulia.corporulia_edinuses(fade-in-preloader)
+            .corporulia__title
+              h1.h1 Корпорулия
+            .corporulia__blocks
+              .corporulia__block.edinuses.is-active
+                .edinuses__character.edinuses__character_main.character.character_edinuses(data-state="normal")
+                  .character__inner
+                    a.character__link(href="")
+                      img.character__image.character__image_disabled(src="./assets/img/characters/edinuses/disabled.png", alt="")
+                      img.character__image.character__image_normal(src="./assets/img/characters/edinuses/normal.png", alt="")
+                      img.character__image.character__image_active(src="./assets/img/characters/edinuses/active.png", alt="")
+                .edinuses__blocks
+                  .edinuses__block.edinuses__block_task_1.is-active(data-message="1")
+                    .edinuses__message.edinuses__message_task_1.block-message
+                      .block-message__content
+                        .block-message__text
+                          p Ты не закончил задание, но мы сохранили твой прогресс и заработанные баллы. Возвращайся, чтобы ответить на оставшиеся вопросы и получить артефакт.
+                    .edinuses__button.edinuses__button_task_1.block-button
+                      .block-button__content
+                        .block-button__text
+                          p Уже готов!
+                        .block-button__button
+                          +link-normal('Продолжить задание', 'corporulian-code.html')
+
+            

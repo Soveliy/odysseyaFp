@@ -1,0 +1,560 @@
+.block-button {
+	max-width: 288px;
+	padding: 17px 20px 20px;
+	width: fit-content;
+	background: #FFF0CB;
+	box-shadow: 0px 12px 40px #FFCC55, inset 0px -4px 8px rgba(225, 162, 14, 0.4);
+	border-radius: 8px;
+	transform-origin: 0 100%;
+	transform: skew(-11deg);
+    
+    @include media {
+        transform: skew(-8deg);
+    }
+
+	&__content {
+		transform-origin: 0 100%;
+		transform: skew(11deg);
+
+        @include media {
+            transform: skew(8deg);
+        }
+	}
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.375;
+
+		p {
+            margin-bottom: 10px;
+            
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+        
+		@include media {
+            font-size: 14px;
+			line-height: 1.42857;
+        }
+        
+	}
+
+    &__button {
+        padding-top: 12px;
+
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+
+
+}
+
+.block-message {
+	position: relative;
+	padding: 46px 42px 5px 50px;
+
+    &::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #fff;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: 100% auto;
+		border-radius: 20px;
+        pointer-events: none;
+	}
+
+	&__content {
+		position: relative;
+	}
+
+	&__text {
+        font-size: 16px;
+        line-height: 1.375;
+
+		p {
+            margin-bottom: 10px;
+            
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+        a {
+            border-bottom: 1px dashed #9062c3;
+            -webkit-transition: border-color .4s;
+            transition: border-color .4s;
+
+            &:hover {
+                border-bottom-color: #dbbcff;
+            }
+        }
+        
+        @include media {
+            font-size: 14px;
+			line-height: 1.42857;
+        }
+        
+	}
+
+    &__crystal {
+        margin: -6px 0 0 -6px;
+        img {
+            display: block;
+        }
+    }
+
+    &__inhabitants {
+        display: flex;
+        grid-column-gap: 7px;
+        padding-top: 7px;
+
+        @include media {
+            padding-top: 5px;
+        }
+
+        &-image {
+            position: relative;
+            padding-top: 91.89189%;
+            
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &-title {
+            text-align: center;
+            padding-top: 7px;
+            font-size: 12px;
+            line-height: 1.167;
+
+            @include media {
+                font-size: 10px;
+            }
+        }
+    }
+
+    &__inhabitants-item {
+        width: 74px;
+
+        img {
+            display: block;
+        }
+
+        @include media {
+            width: 66px;
+        }
+    }
+
+    &__artifacts {
+        display: flex;
+        grid-column-gap: 2px;
+        padding-top: 12px;
+        margin-left: -5px;
+
+        @include media {
+            padding-top: 26px;
+            grid-column-gap: 1px;
+        }
+    }
+
+    &__artifacts-item {
+        position: relative;
+        width: 50px;
+        height: 50px;
+
+        @include media {
+            width: 42px;
+            height: 42px;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            width: 74px;
+            height: 74px;
+            max-width: none;
+            transform: translate(-50%, -50%);
+
+            @include media {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        &_5 {
+            margin-left: 6px;
+        }
+
+        &_6 {
+            margin-left: 6px;
+        }
+    }
+
+    &__tasks {
+        display: flex;
+        grid-column-gap: 24px;
+    }
+
+    &__tasks-item {
+        position: relative;
+        width: 113px;
+        height: 51px;
+
+        @include media {
+            width: 101px;
+            height: 46px;
+        }
+
+        img {
+            position: absolute;
+            left: -25px;
+            top: -8px;
+            width: 161px;
+            height: 99px;
+            max-width: none;
+            object-fit: contain;
+
+            @include media {
+                left: -23px;
+                top: -12px;
+                width: 146px;
+                height: 90px;
+            }
+        }
+
+        &_2 {
+            img {
+                left: -19px;
+                width: 128px;
+                height: 114px;
+
+                @include media {
+                    width: 118px;
+                    height: 105px;
+                    left: -14px;
+                }
+            }
+        }
+    }
+
+	
+}
+
+.btn-link {
+	display: block;
+	width: fit-content;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.375;
+	text-decoration: none;
+	text-align: left;
+	color: $color-text;
+    cursor: pointer;
+
+	span {
+		border-bottom: 1px dashed $dark-purple;
+		transition: $transition border-color;
+	}
+
+	&:hover {
+
+		span {
+			border-bottom-color: $purple;
+		}
+	}
+
+	&:active {
+		color: $blue;
+	}
+
+	&.is-disabled,
+    &:disabled {
+        color: $dark-purple;
+
+		span {
+			border-bottom-color: transparent;
+		}
+    }
+
+    @include media {
+        font-size: 14px;
+		line-height: 1.42857;
+    }
+}
+
+.planet {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    &__astronaut {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        z-index: 100;
+        pointer-events: none;
+        width: 410px; 
+        margin-left: 315px;
+        transform: translateX(-50%);
+
+        img {
+            display: block;
+        }
+
+        @include media {
+            width: 340px;
+            bottom: -42px;
+        }
+    }
+
+    &__blocks {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 173px;
+        margin-left: -149px;
+
+        @include media {
+            margin-left: -138px;
+            bottom: 131px;
+        }
+    }
+
+    &__block {
+        transform: translateY(200px);
+        opacity: 0;
+        transition: 0.8s opacity, 0.8s transform;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        pointer-events: none;
+
+        &.is-active {
+            transform: translateY(0);
+            opacity: 1;
+            z-index: 50;
+            pointer-events: auto;
+        }
+
+        &.is-no-active {
+            transform: translateY(-200px);
+        }
+
+        &_1 {
+            padding-right: 7px;
+
+            @include media {
+                bottom: 47px;
+            }
+        }
+
+        &_2 {
+            bottom: 245px - 173px;
+
+            @include media {
+                bottom: 0;
+                margin-left: 21px;
+            }
+        }
+    }
+
+    &__name {
+        position: absolute;
+        width: 104%;
+        height: 104%;
+        left: 50%;
+        top: 50%;
+        margin-left: -12px;
+        margin-top: -25px;
+        font-size: 32px;
+        transform: translate(-50%, -50%);
+        color: $white;
+
+        @include media {
+            margin-left: -16px;
+            margin-top: -14px;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            fill: $white;
+            transform: rotate(30deg);
+        }
+
+        textPath {
+            font-size: 7px;
+            letter-spacing: 0.15em;
+
+            @include media {
+                font-size: 6.6px;
+                letter-spacing: 0.2em;
+            }
+        }
+    }
+
+    &__image {
+        position: absolute;
+        left: 50%;
+        bottom: 204px;
+        transform: translateX(-100%);
+        margin-left: -171px;
+        width: 434px;
+        height: 434px; 
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -137px;
+            top: -78px;
+            width: 542px;
+            height: 542px;
+            border-radius: 50%;
+            background: $blue;
+            filter: blur(120px);
+
+            @include media {
+                width: 452px;
+                height: 452px;
+            }
+        }
+
+        img {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @include media {
+            width: 362px;
+            height: 362px;
+            margin-left: -136px;
+            bottom: 62px;
+        }
+    }
+
+    &__message {
+        
+        &::before {
+            top: -28px;
+            left: -40px;
+            background-color: transparent;
+        }
+
+        + .planet__message {
+            margin-top: 8px;
+        }
+        
+
+        &_1 {
+            height: 284px;
+            width: 396px;
+            margin-left: 49px;
+
+            &::before {
+                width: 480px;
+		        height: 364px;
+                background-image: url("../img/planet/messages/message_1.svg");
+
+                @include media {
+                    height: 348px;
+                    background-image: url("../img/planet/messages/message_1_1200.svg");
+                }
+            }
+
+            @include media {
+                height: 268px;
+            }
+        }
+
+        &_2 {
+            width: 416px;
+            height: 206px;
+            padding: 31px 50px 0 62px;
+            margin-left: 38px;
+
+            &::before {
+                width: 496px;
+		        height: 286px;
+                background-image: url("../img/planet/messages/message_2.svg");
+
+                @include media {
+                    //height: 268px;
+                    width: 452px;
+                    height: 264px; 
+                    background-image: url("../img/planet/messages/message_2_1200.svg");
+                }
+            }
+
+            @include media {
+                width: 372px;
+                height: 184px;
+                padding-top: 29px;
+                padding-left: 55px;
+                margin-left: 92px;
+            }
+        }
+
+        &_3 {
+            width: 319px;
+            height: 155px;
+            padding: 31px 33px 5px 39px;
+            margin-left: auto;
+
+            &::before {
+                left: -50px;
+                width: 411px;
+		        height: 235px;
+                background-image: url("../img/planet/messages/message_3.svg");
+
+         
+                @include media {
+                    width: 369px;
+                    height: 218px;
+                    left: -37px;
+                }
+            }
+
+            @include media {
+                left: 14px;
+                width: 284px;
+                height: 138px;
+                padding-left: 44px;
+                margin-right: 75px;
+            }
+        }
+    }
+
+    &__button {
+        margin-top: 16px;
+        align-self: flex-start;
+        
+        &_2 {
+            margin-left: 10px;
+            
+            @include media {
+                margin-top: 37px;
+                margin-left: 36px;
+            }
+        }
+    }
+}

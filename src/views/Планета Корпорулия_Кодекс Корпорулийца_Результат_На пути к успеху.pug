@@ -1,0 +1,696 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Планета Корпорулия_Кодекс Корпорулийца_Результат_На пути к успеху'
+  - var bodyClass = ''
+block content
+  .body-container
+    .page__border
+      include _includes/blocks/preloader
+      .page.page-main-edinuses(data-scrollbar)
+        .page-content(fade-in-preloader)
+          +header-task-2('Кодекс Корпорулийца')
+          section.corporulian-code.corporulian-code_main
+            .corporulian-code__blocks
+              .corporulian-code__block.corporulian-code__block_game
+                #block-welcome.corporulian-code__welcome.questions-welcome.is-active
+                  .questions-welcome__character.character.character_edinuses(data-state="normal")
+                    .character__inner
+                      img.character__image.character__image_normal(src="./assets/img/characters/edinuses/normal.png", alt="")
+                  .questions-welcome__box
+                    .questions-welcome__content 
+                      .questions-welcome__title Разделяешь ли ты ценности ПСБ? Проверим! <br>В этом задании «вопрос-ответ» тебе нужно делать выбор, исходя из наших корпоративных правил.
+                      .questions-welcome__regulations
+                        .questions-welcome__regulations-item
+                          .questions-welcome__regulations-number
+                            span 1
+                          .questions-welcome__regulations-text 
+                            p На поле есть 3 игровых предмета. Поочередно нажми на каждый, чтобы увидеть варианты ответа на вопрос.
+                          .questions-welcome__regulations-image 
+                            img(src="./assets/img/corporulian-code/welcome/image.png", alt="")
+                        .questions-welcome__regulations-item
+                          .questions-welcome__regulations-number
+                            span 2
+                          .questions-welcome__regulations-text 
+                            p Выбери наиболее подходящий ответ.
+                        .questions-welcome__regulations-item
+                          .questions-welcome__regulations-number
+                            span 3
+                          .questions-welcome__regulations-text 
+                            p Чем быстрее ты ответишь на все вопросы, тем больше баллов заработаешь.
+                        .questions-welcome__regulations-item
+                          .questions-welcome__regulations-number
+                            span 4
+                          .questions-welcome__regulations-text 
+                            p Помни, в этом задании у тебя всего одна попытка!
+
+                      .questions-welcome__button
+                        button.btn.--texture.--big#button-game-start Поехали
+                #block-game.corporulian-code__game.questions-game
+                  .questions-game__counting.counting.is-active(data-game-counting)
+                    .counting__item.counting__item_question
+                      .counting__name Вопрос
+                      .counting__number 
+                        span <span id="question-number">1</span>/9
+                    .counting__item.counting__item_time
+                      .counting__name Время
+                      .counting__number 
+                        span 0:00
+                  .questions-game__main(data-game-question="9")
+                    .questions-game__background
+                    .questions-game__blocks 
+                      .questions-game__block.questions-game__block_1(data-question="1")
+                        .questions-game__character.questions-game__character_1.character.character_edinuses(data-question-character data-state="normal")
+                          .character__inner
+                            img.character__image.character__image_normal(src="./assets/img/characters/edinuses/normal.png", alt="")
+                            img.character__image.character__image_laugh(src="./assets/img/characters/edinuses/laugh.png", alt="")
+                            img.character__image.character__image_sad(src="./assets/img/characters/edinuses/sad.png", alt="")
+                        .questions-game__box.questions-game__box_1
+                          .questions-game__content
+                            .questions-game__text 
+                              p Вчера новичок из кредитного отдела попросил помочь ему разобраться с документами. А сегодня ты заработался и совершенно забыл о своем согласии. 
+                              p И вот он стоит перед тобой с пачкой бумаг, а у тебя куча задач и удивленный вид. Что будешь делать?
+                            .questions-game__result
+                              .questions-game__result-item.questions-game__result-item_1.--fail(data-question-result="1")
+                                .questions-game__result-icon 
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p А как же твое обещание? Держать слово — один из главных принципов ответусов. Они всегда выполняют свои обещания, поэтому все на Корпорулии знают — на ответусов можно положиться.
+                              .questions-game__result-item.questions-game__result-item_2.--fail(data-question-result="2")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Как же так? Держать слово — один из главных принципов ответусов. Они всегда выполняют свои обещания, поэтому все на Корпорулии знают — на ответусов можно положиться.
+                              .questions-game__result-item.questions-game__result-item_3.--success(data-question-result="3")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это по-нашему!
+                                .questions-game__result-text
+                                  p Ответус знает, как важно держать свое слово и выполнять обещания. <br>Значит, на тебя можно положиться!
+                              .questions-game__result-button
+                                button.button.btn.--normal.--texture(data-question-next="2") Следующий вопрос
+                        .questions-game__answers
+                          .game-answer.game-answer_1(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/1/things/1.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/1/things/1_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Извинюсь и предложу ему разобраться самому. Сотрудник должен уметь решать проблему самостоятельно.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="1" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_2(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/1/things/2.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/1/things/2_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Сделаю вид, что он обознался. Мало ли тут народу сидит?
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="2" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_3(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/1/things/3.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/1/things/3_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Договорюсь с ним о новом времени и поставлю напоминание.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="3" data-select-character="laugh") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                      .questions-game__block.questions-game__block_2(data-question="2")
+                        .questions-game__character.questions-game__character_2.character.character_answerus(data-question-character data-state="normal")
+                          .character__inner
+                            img.character__image.character__image_normal(src="./assets/img/characters/answerus/normal.png", alt="")
+                            img.character__image.character__image_laugh(src="./assets/img/characters/answerus/laugh.png", alt="")
+                            img.character__image.character__image_sad(src="./assets/img/characters/answerus/sad.png", alt="")
+                        .questions-game__box.questions-game__box_2
+                          .questions-game__content
+                            .questions-game__text 
+                              p Утром у тебя все пошло наперекосяк: ты проспал, не успел позавтракать, порвал любимые брюки, а в автобусе кто-то отдавил тебе ногу. Ты пришел на работу не в духе. 
+                              p С утра запланировано обсуждение нового проекта с командой твоего подразделения.
+                              p Как будешь вести себя на встрече?
+
+                            .questions-game__result
+                              .questions-game__result-item.questions-game__result-item_1.--fail(data-question-result="1")
+                                .questions-game__result-icon 
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Не будь букой! Заряжать энергией своих коллег — один из главных принципов ответусов. Они советуют тебе забыть о неприятностях и поддержать боевой настрой в команде!
+                              .questions-game__result-item.questions-game__result-item_2.--fail(data-question-result="2")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Не стоит пускаться в атаку из-за плохого настроения! Заряжать энергией своих коллег — один из главных принципов ответусов. Они советуют тебе забыть о неприятностях и поддержать боевой настрой в команде!
+                              .questions-game__result-item.questions-game__result-item_3.--success(data-question-result="3")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это по-нашему!
+                                .questions-game__result-text
+                                  p Так держать! Ты точно знаешь, насколько важно делиться своей позитивной энергией с&nbsp;коллегами для классного результата!
+                              .questions-game__result-button
+                                button.button.btn.--normal.--texture(data-question-next="3") Следующий вопрос
+                        .questions-game__answers
+                          .game-answer.game-answer_1(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/2/things/1.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/2/things/1_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Буду молчать с угрюмым видом. Может, удастся избежать новых задач в этот день.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="1" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_2(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/2/things/2.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/2/things/2_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Буду отвешивать критичные замечания в сторону коллег, проекта, процессов и нашей компании в целом. В конце концов, мне же нужно куда-то выплеснуть свое недовольство!
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="2" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_3(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/2/things/3.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/2/things/3_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Постараюсь переключиться на хорошее настроение и внести свой вклад в общее дело. Коллеги не виноваты в том, что мое утро не задалось.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="3" data-select-character="laugh") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                      .questions-game__block.questions-game__block_3(data-question="3")
+                        .questions-game__character.questions-game__character_3.character.character_latitudeus(data-question-character data-state="normal")
+                          .character__inner
+                            img.character__image.character__image_normal(src="./assets/img/characters/latitudeus/normal.png", alt="")
+                            img.character__image.character__image_laugh(src="./assets/img/characters/latitudeus/laugh.png", alt="")
+                            img.character__image.character__image_sad(src="./assets/img/characters/latitudeus/sad.png", alt="")
+                        .questions-game__box.questions-game__box_3
+                          .questions-game__content
+                            .questions-game__text 
+                              p Руководитель предлагает тебе лидировать новый значимый проект для банка. 
+                              p Ты никогда подобного не делал, поэтому не уверен, что твоих знаний и навыков хватит<br> для выполнения данной задачи. 
+                              p Как поступишь в этой ситуации?
+
+                            .questions-game__result
+                              .questions-game__result-item.questions-game__result-item_1.--success(data-question-result="1")
+                                .questions-game__result-icon 
+                                  span
+                                .questions-game__result-title Это по-нашему!
+                                .questions-game__result-text
+                                  p Вот это подход! Ты точно разделяешь правило ответусов постоянно наращивать свои профессиональные знания, компетенции и навыки.
+                              .questions-game__result-item.questions-game__result-item_2.--fail(data-question-result="2")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Так не пойдет! Ответусы ратуют за постоянное развитие профессиональных знаний, компетенций и навыков. Иначе можно и мхом порасти ;)
+                              .questions-game__result-item.questions-game__result-item_3.--fail(data-question-result="3")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Круто быть смелым, ловким, умелым, а еще круче — хорошенько подготовиться к новой непростой задаче и пройти специальное обучение ;) Ответусы ратуют за постоянное развитие профессиональных знаний, компетенций и навыков.  
+                              .questions-game__result-button
+                                button.button.btn.--normal.--texture(data-question-next="4") Следующий вопрос
+                        .questions-game__answers
+                          .game-answer.game-answer_1(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/3/things/1.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/3/things/1_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Соглашусь. Составлю список того, что нужно освоить и попрошу руководителя отправить меня на обучение. При желании можно справиться с любыми сложными задачами!
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="1" data-select-character="laugh") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_2(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/3/things/2.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/3/things/2_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Откажусь. Такой проект должен вести тот, у кого есть необходимые навыки. Не уверен, что хочу сейчас погружаться во что-то новое.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="2" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_3(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/3/things/3.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/3/things/3_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Соглашусь. Такой сообразительный и коммуникабельный человек, как я, всегда разберется в сложной ситуации.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="3" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                      .questions-game__block.questions-game__block_4(data-question="4")
+                        .questions-game__character.questions-game__character_4.character.character_edinuses(data-question-character data-state="normal")
+                          .character__inner
+                            img.character__image.character__image_normal(src="./assets/img/characters/edinuses/normal.png", alt="")
+                            img.character__image.character__image_laugh(src="./assets/img/characters/edinuses/laugh.png", alt="")
+                            img.character__image.character__image_sad(src="./assets/img/characters/edinuses/sad.png", alt="")
+                        .questions-game__box.questions-game__box_4
+                          .questions-game__content
+                            .questions-game__text 
+                              p Руководитель ставит тебе задачу, которую нужно решить до конца этой недели. 
+                              p Ты понимаешь, что сможешь приступить к ней только в начале следующей недели, так как на эту у тебя уже есть задача в работе. Как поступишь в этой ситуации?
+
+                            .questions-game__result
+                              .questions-game__result-item.questions-game__result-item_1.--fail(data-question-result="1")
+                                .questions-game__result-icon 
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Руководитель не всегда знает, чем ты сейчас занят. Твоя основная задача могла быть намного важнее новой. Для Широтуса важно тщательно взвешивать риски.
+                              .questions-game__result-item.questions-game__result-item_2.--fail(data-question-result="2")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Руководитель не всегда знает, чем ты сейчас занят. Твоя основная задача могла быть намного важнее новой. Для Широтуса важно тщательно взвешивать риски.
+                              .questions-game__result-item.questions-game__result-item_3.--success(data-question-result="3")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это по-нашему!
+                                .questions-game__result-text
+                                  p Молодец! Ты на зубок знаешь принцип Широтуса — оценивать риски и последствия своих действий. <br>А значит, тебе можно смело доверить<br> Кристалл знаний!
+                              .questions-game__result-button
+                                button.button.btn.--normal.--texture(data-question-next="5") Следующий вопрос
+                        .questions-game__answers
+                          .game-answer.game-answer_1(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/4/things/1.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/4/things/1_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Буду работать с двумя задачами одновременно. Выполню тот объем по каждой задаче, который успею осилить.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="1" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_2(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/4/things/2.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/4/things/2_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Выполню задачу, которую поставил руководитель, вместо основной работы. У него наверняка была веская причина ставить подобные сроки.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="2" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_3(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/4/things/3.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/4/things/3_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Согласую с руководителем приоритеты в работе. Договорюсь о новых сроках по каждой задаче.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="3" data-select-character="laugh") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                      .questions-game__block.questions-game__block_5(data-question="5")
+                        .questions-game__character.questions-game__character_5.character.character_answerus(data-question-character data-state="normal")
+                          .character__inner
+                            img.character__image.character__image_normal(src="./assets/img/characters/answerus/normal.png", alt="")
+                            img.character__image.character__image_laugh(src="./assets/img/characters/answerus/laugh.png", alt="")
+                            img.character__image.character__image_sad(src="./assets/img/characters/answerus/sad.png", alt="")
+                        .questions-game__box.questions-game__box_5
+                          .questions-game__content
+                            .questions-game__text 
+                              p Руководитель предлагает всему отделу пройти курсы повышения квалификации. <br>Как ты отреагируешь?
+
+                            .questions-game__result
+                              .questions-game__result-item.questions-game__result-item_1.--success(data-question-result="1")
+                                .questions-game__result-icon 
+                                  span
+                                .questions-game__result-title Это по-нашему!
+                                .questions-game__result-text
+                                  p Йес! Широтус поддерживает изучение новых трендов индустрии, рынка и технологий, чтобы сделать наш банк еще чуточку круче.
+                              .questions-game__result-item.questions-game__result-item_2.--fail(data-question-result="2")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Широтус в печали. Наш народ всегда стремится к&nbsp;изучению чего-то нового. Это важное качество помогает Корпорулии процветать.
+                              .questions-game__result-item.questions-game__result-item_3.--fail(data-question-result="3")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Широтус в печали. Наш народ всегда стремится к изучению чего-то нового. Это важное качество помогает Корпорулии процветать.
+                              .questions-game__result-button
+                                button.button.btn.--normal.--texture(data-question-next="6") Следующий вопрос
+                        .questions-game__answers
+                          .game-answer.game-answer_1(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/5/things/1.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/5/things/1_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Порадуюсь, что узнаю что-то новое для своей работы! Круто, когда есть возможность развиваться и совершенствоваться.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="1" data-select-character="laugh") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_2(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/5/things/2.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/5/things/2_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Попробую отказаться. Обучение — это дополнительная нагрузка. <br>Мне и текущих задач на работе хватает!
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="2" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_3(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/5/things/3.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/5/things/3_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Отбиваться от коллектива и бастовать против обучения не буду, но и сильного восторга по этому поводу не испытываю.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="3" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                      .questions-game__block.questions-game__block_6(data-question="6")
+                        .questions-game__character.questions-game__character_6.character.character_latitudeus(data-question-character data-state="normal")
+                          .character__inner
+                            img.character__image.character__image_normal(src="./assets/img/characters/latitudeus/normal.png", alt="")
+                            img.character__image.character__image_laugh(src="./assets/img/characters/latitudeus/laugh.png", alt="")
+                            img.character__image.character__image_sad(src="./assets/img/characters/latitudeus/sad.png", alt="")
+                        .questions-game__box.questions-game__box_6
+                          .questions-game__content
+                            .questions-game__text 
+                              p Ты сходил на профильную конференцию и узнал о&nbsp;новой технологии, которая сильно упростила бы твои рабочие процессы. 
+                              p Что думаешь на этот счет?
+
+                            .questions-game__result
+                              .questions-game__result-item.questions-game__result-item_1.--fail(data-question-result="1")
+                                .questions-game__result-icon 
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Знать функции Excel похвально! Но широтусы всегда в поиске новых возможностей и решений. Не упускай шанс привнести что-то новое в свою работу!
+                              .questions-game__result-item.questions-game__result-item_2.--success(data-question-result="2")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это по-нашему!
+                                .questions-game__result-text
+                                  p Широтус восхищен твоим желанием внедрять что-то новое и полезное!
+                              .questions-game__result-item.questions-game__result-item_3.--fail(data-question-result="3")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Хорошо, когда можно посмеяться вместе с коллегами! Но не лучше ли попробовать что-то изменить? ;) Широтусы всегда в&nbsp;поиске новых решений.
+                              .questions-game__result-button
+                                button.button.btn.--normal.--texture(data-question-next="7") Следующий вопрос
+                        .questions-game__answers
+                          .game-answer.game-answer_1(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/6/things/1.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/6/things/1_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Нововведения — это, конечно, круто. Но если хорошо знать функции Excel, то можно и без них обойтись.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="1" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_2(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/6/things/2.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/6/things/2_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Расскажу об этом коллегам на&nbsp;планерке. Подумаем вместе, как внедрить подобную технологию у нас в банке.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="2" data-select-character="laugh") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_3(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/6/things/3.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/6/things/3_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Напишу об этом в общий чат коллегам. Посмеемся вместе — мы-то уж точно никогда не будем так работать :)
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="3" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                      .questions-game__block.questions-game__block_7(data-question="7")
+                        .questions-game__character.questions-game__character_7.character.character_edinuses(data-question-character data-state="normal")
+                          .character__inner
+                            img.character__image.character__image_normal(src="./assets/img/characters/edinuses/normal.png", alt="")
+                            img.character__image.character__image_laugh(src="./assets/img/characters/edinuses/laugh.png", alt="")
+                            img.character__image.character__image_sad(src="./assets/img/characters/edinuses/sad.png", alt="")
+                        .questions-game__box.questions-game__box_7
+                          .questions-game__content
+                            .questions-game__text 
+                              p Вы с коллегами полгода трудились над проектом по внедрению новой системы. Защита результата проекта перед руководителями прошла плохо. 
+                              p Вам оставили кучу замечаний и доработок. <br>Твои мысли по этому поводу?
+
+                            .questions-game__result
+                              .questions-game__result-item.questions-game__result-item_1.--success(data-question-result="1")
+                                .questions-game__result-icon 
+                                  span
+                                .questions-game__result-title Это по-нашему!
+                                .questions-game__result-text
+                                  p Молодец! Единусы напоминают нам о том, что важно не только работать сообща, но и уметь отвечать за неверные решения.
+                              .questions-game__result-item.questions-game__result-item_2.--fail(data-question-result="2")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Единусы в шоке! Настоящая команда не разделяет проблемы на свои и чужие.
+                              .questions-game__result-item.questions-game__result-item_3.--fail(data-question-result="3")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Ну и зря! Если бы никто не переделывал то, что уже работает, человечество никогда не пересело бы с телеги в автомобиль. Предлагать новое — значит двигаться вперед и расти вместе со своей командой.
+                              .questions-game__result-button
+                                button.button.btn.--normal.--texture(data-question-next="8") Следующий вопрос
+                        .questions-game__answers
+                          .game-answer.game-answer_1(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/7/things/1.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/7/things/1_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Мы с коллегами старались сделать проект по максимуму. Защита показала, что нам есть куда расти. Погрустим немного, обсудим комментарии руководства и решим, куда двигаться дальше.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="1" data-select-character="laugh") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_2(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/7/things/2.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/7/things/2_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Свою часть я точно сделал на отлично! А&nbsp;вот моим коллегам по проекту есть куда расти. Все замечания были в их сторону.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="2" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_3(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/7/things/3.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/7/things/3_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Мы отлично поработали. <br>Если руководителям что-то не понравилось, это их субъективное мнение.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="3" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                      .questions-game__block.questions-game__block_8(data-question="8")
+                        .questions-game__character.questions-game__character_8.character.character_answerus(data-question-character data-state="normal")
+                          .character__inner
+                            img.character__image.character__image_normal(src="./assets/img/characters/answerus/normal.png", alt="")
+                            img.character__image.character__image_laugh(src="./assets/img/characters/answerus/laugh.png", alt="")
+                            img.character__image.character__image_sad(src="./assets/img/characters/answerus/sad.png", alt="")
+                        .questions-game__box.questions-game__box_8
+                          .questions-game__content
+                            .questions-game__text 
+                              p В твое подразделение часто поступают запросы на обработку документов, которая занимает много времени. Вы с коллегами нашли способ оптимизировать процесс и рассказали об этом на собрании департамента. 
+                              p Выяснилось, что еще одна команда работает над той же проблемой, их решение отличается от вашего.
+                              p Что предложишь делать в этой ситуации?
+
+                            .questions-game__result
+                              .questions-game__result-item.questions-game__result-item_1.--success(data-question-result="1")
+                                .questions-game__result-icon 
+                                  span
+                                .questions-game__result-title Это по-нашему!
+                                .questions-game__result-text
+                                  p Единусы очень рады твоему стремлению к взаимопомощи и конструктивному диалогу с коллегами.
+                              .questions-game__result-item.questions-game__result-item_2.--fail(data-question-result="2")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Оставим соревнования для спортивной площадки ;) Круто, когда на работе ты можешь объединиться с коллегами для достижения наилучшего результата.
+                              .questions-game__result-item.questions-game__result-item_3.--fail(data-question-result="3")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Хорошо, когда есть такая уверенность в себе ;) Единусы советуют объединять усилия, чтобы сообща находить лучшие решения.
+                              .questions-game__result-button
+                                button.button.btn.--normal.--texture(data-question-next="9") Следующий вопрос
+                        .questions-game__answers
+                          .game-answer.game-answer_1(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/8/things/1.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/8/things/1_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Думаю, нам стоит обменяться данными и дальше работать над этой проблемой вместе. Результат важен обеим командам.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="1" data-select-character="laugh") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_2(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/8/things/2.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/8/things/2_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Самое эффективное — дать обеим командам завершить свою работу, а потом посмотреть, чье решение будет лучше.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="2" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_3(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/8/things/3.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/8/things/3_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Продолжим работать каждый над своим решением. Мы делаем процесс удобным для нашего подразделения. Зачем обращать внимание на кого-то еще?
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="3" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                      .questions-game__block.questions-game__block_9.is-active(data-question="9")
+                        .questions-game__character.questions-game__character_9.character.character_edinuses(data-question-character data-state="normal")
+                          .character__inner
+                            img.character__image.character__image_normal(src="./assets/img/characters/edinuses/normal.png", alt="")
+                            img.character__image.character__image_laugh(src="./assets/img/characters/edinuses/laugh.png", alt="")
+                            img.character__image.character__image_sad(src="./assets/img/characters/edinuses/sad.png", alt="")
+                        .questions-game__box.questions-game__box_9
+                          .questions-game__content
+                            .questions-game__text 
+                              p Ты участвуешь в кросс-функциональном проекте. Похоже, что коллега из другого подразделения недостаточно вовлекается в совместную работу, хотя помощь от него очень нужна. 
+                              p Как поступишь в этой ситуации?
+
+                            .questions-game__result
+                              .questions-game__result-item.questions-game__result-item_1.--fail(data-question-result="1")
+                                .questions-game__result-icon 
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Единусы расстроены. Нельзя просто не замечать одного из членов команды! Иначе это скажется на результатах проекта.
+                              .questions-game__result-item.questions-game__result-item_2.--fail(data-question-result="2")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это не в нашем духе!
+                                .questions-game__result-text
+                                  p Вот это поворот! Единусы уверены, что лучше сначала обсудить с коллегой его поведение лично. Именно так поступают те, кто работает в одной команде.
+                              .questions-game__result-item.questions-game__result-item_3.--success(data-question-result="3")
+                                .questions-game__result-icon
+                                  span
+                                .questions-game__result-title Это по-нашему!
+                                .questions-game__result-text
+                                  p Круто! Именно так поступают те, кто работает в команде. Ты отлично усвоил главные принципы единусов.
+                              .questions-game__result-button
+                                button.button.btn.--normal.--texture#button-result Узнать результат
+                        .questions-game__answers
+                          .game-answer.game-answer_1(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/9/things/1.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/9/things/1_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Постарюсь меньше обращать на это внимание. В мои обязанности не входит контроль работы сотрудников других подразделений. Это его выбор.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="1" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_2(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/9/things/2.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/9/things/2_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Напишу его руководителю. Он должен знать, что его сотрудник некачественно выполняет свою работу!
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="2" data-select-character="sad") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+                          .game-answer.game-answer_3(data-answer)
+                            .game-answer__image(data-answer-image)
+                              img.game-answer__image-default(src="./assets/img/questions/9/things/3.png", alt="")
+                              img.game-answer__image-active(src="./assets/img/questions/9/things/3_active.png", alt="")
+                            .game-answer__box
+                              .game-answer__content
+                                .game-answer__text Попробую поговорить с коллегой. Объясню, что его участие в проекте очень важно. Спрошу о причинах такого поведения.
+                                .game-answer__button
+                                  button.button.btn.--normal.--texture(data-answer-select="3" data-select-character="laugh") Выбрать этот ответ
+                              button.game-answer__close(data-answer-close)
+              .corporulian-code__block.corporulian-code__block_result.is-active 
+                .corporulian-code__character.character.character_edinuses(data-question-character data-state="laugh")
+                  .character__inner
+                    img.character__image.character__image_normal(src="./assets/img/characters/edinuses/normal.png", alt="")
+                    img.character__image.character__image_laugh(src="./assets/img/characters/edinuses/laugh.png", alt="")
+                    img.character__image.character__image_sad(src="./assets/img/characters/edinuses/sad.png", alt="")
+                .corporulian-code__result.corporulian-code__result_2.game-result 
+                  .game-result__content
+                    .game-result__text.game-result__text_top Ты ответил на <b>4 из 9 вопросов</b> за <b>3 мин 22 с</b> и заработал <b>320 баллов</b>
+                    .game-result__title На пути к успеху
+                    .game-result__text Ты неплохо разбираешься в правилах жителей Корпорулии. Ответусы советуют тебе чуть-чуть подтянуть знания, чтобы пользоваться принципами каждый день и находить общий язык с жителями других планет.
+                    .game-result__button
+                      button.btn.--texture.--big#button-get-artifact Получить артефакт
+                .corporulian-code__particles
+              .corporulian-code__block.corporulian-code__block_artifact
+                .corporulian-code__get-artifact.get-artifact
+                  .get-artifact__stars
+                    .star.star_1
+                    .star.star_2
+                    .star.star_3
+                  .get-artifact__rays
+                  .get-artifact__bright-rays
+                    img(src="./assets/img/corporulian-code/get-artifact/bright-rays.svg", alt="")
+                  .get-artifact__light
+                    span
+                  .get-artifact__title.get-artifact__title_main.is-active Ты получил артефакт <br> с планеты Корпорулия
+                  .get-artifact__title.get-artifact__title_result Кристалл знаний твой!
+                  .get-artifact__box
+                    img(src="./assets/img/corporulian-code/get-artifact/box.png", alt="")
+                    img(src="./assets/img/corporulian-code/get-artifact/box-open.png", alt="")
+                  .get-artifact__crystal
+                    img(src="./assets/img/corporulian-code/get-artifact/crystal.png", alt="")
+                  .get-artifact__message.get-artifact__message_1.block-message
+                    .block-message__text 
+                      p Поздравляю, ты выполнил задания и получил артефакт! Нажми на космоящик, чтобы открыть его!
+                  .get-artifact__message.get-artifact__message_2.block-message
+                    .block-message__text 
+                      p Переходи скорее в Центр управления, чтобы применить артефакт.
+                  .get-artifact__astronaut.is-active
+                  .get-artifact__button
+                    a.btn.--big(href="") Перейти в Центр управления
+
+
+              #block-termination.corporulian-code__block.corporulian-code__block_termination.is-blue
+                .game-termination
+                  .game-termination__astronaut
+                  .game-termination__block.game-termination__block_5
+                    .game-termination__message.game-termination__message_6.block-message
+                      .block-message__text 
+                        p Если ты выйдешь прямо сейчас, набранные баллы сохранятся, но ты не сможешь пройти задание с начала.
+                        p Ты действительно хочешь выйти, не закончив задание?
+                      .block-message__button
+                        button.button.btn.--normal.--texture#button-return Продолжить задание
+                      .block-message__button
+                        a.button.btn.--default.--border(href="") Выйти из задания
+
+
+        

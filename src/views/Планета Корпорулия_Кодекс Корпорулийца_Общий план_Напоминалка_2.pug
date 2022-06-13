@@ -1,0 +1,52 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Планета Корпорулия_Кодекс Корпорулийца_Общий план_Напоминалка'
+  - var bodyClass = ''
+block content
+  .body-container
+    .page__border
+      include _includes/blocks/preloader
+      .page.page-main-bg(data-scrollbar)
+        .page-content(fade-in-preloader)
+          +header-back('Вернуться к карте планет')
+          section.corporulia.corporulia_main
+            .corporulia__layer
+              .corporulia__layer-bg.corporulia__layer-bg_1
+            .corporulia__title
+              h1.h1 Корпорулия
+            .corporulia__blocks
+              .corporulia__block.answerus.is-active
+                .answerus__character.character.character_answerus(data-state="normal")
+                  .character__inner
+                    img.character__image.character__image_disabled(src="./assets/img/characters/answerus/disabled.png", alt="")
+                    img.character__image.character__image_normal(src="./assets/img/characters/answerus/normal.png", alt="")
+                    img.character__image.character__image_active(src="./assets/img/characters/answerus/active.png", alt="")
+                .answerus__blocks
+                  .answerus__block.answerus__block_task_3.is-active(data-message="1")
+                    .answerus__message.answerus__message_task_3.block-message
+                      .block-message__content
+                        .block-message__text
+                          p Ты покинул задание, не закончив его. Пройди «Кодекс Корпорулийца» целиком, чтобы получить артефакт!
+                    .answerus__button.answerus__button_task_3.block-button
+                      .block-button__content
+                        .block-button__button
+                          +link-normal('Перейти к Единусу', 'edinuses_task_2.html')
+              .corporulia__block.latitudeus
+                .latitudeus__layer.latitudeus__layer_normal.is-active
+                .latitudeus__layer.latitudeus__layer_active
+                .latitudeus__character.character.character_latitudeus(data-state="normal")
+                  .character__inner
+                    a.character__link(href="latitudeus.html") 
+                      img.character__image.character__image_disabled(src="./assets/img/characters/latitudeus/disabled.png", alt="")
+                      img.character__image.character__image_normal(src="./assets/img/characters/latitudeus/normal.png", alt="")
+                      img.character__image.character__image_active(src="./assets/img/characters/latitudeus/active.png", alt="")
+              .corporulia__block.edinuses
+                .edinuses__layer.edinuses__layer_normal.is-active
+                .edinuses__layer.edinuses__layer_active
+                .edinuses__character.character.character_edinuses(data-state="normal")
+                  .character__inner
+                    a.character__link(href="")
+                      img.character__image.character__image_disabled(src="./assets/img/characters/edinuses/disabled.png", alt="")
+                      img.character__image.character__image_normal(src="./assets/img/characters/edinuses/normal.png", alt="")
+                      img.character__image.character__image_active(src="./assets/img/characters/edinuses/active.png", alt="")

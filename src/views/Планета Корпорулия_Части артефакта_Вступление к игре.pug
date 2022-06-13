@@ -1,0 +1,304 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Планета Корпорулия_Части артефакта_Вступление к игре'
+  - var bodyClass = ''
+block content
+  .body-container
+    .page__border
+      include _includes/blocks/preloader
+      .page.page-main-latitudeus(data-scrollbar)
+        .page-content(fade-in-preloader)
+          +header-task('Части артефакта')
+          section.artifact-parts.artifact-parts_main
+            .artifact-parts__platform
+              img.artifact-parts__platform-image(src="./assets/img/artifact-parts/platform.png", alt="")
+            .artifact-parts__character.character.character_latitudeus(data-state="normal")
+              .character__inner
+                img.character__image.character__image_normal(src="./assets/img/characters/latitudeus/normal.png", alt="")
+            .artifact-parts__blocks
+              .artifact-parts__block.artifact-parts__block_game.is-blue.is-active
+                .artifact-parts__content
+                  #block-welcome.artifact-parts__welcome.parts-welcome.is-active
+                    .parts-welcome__text.parts-welcome__text_1
+                      p Собирай минимум 3 одинаковых символа в ряд по&nbsp;горизонтали или вертикали, меняя местами соседние фигуры.
+                    .parts-welcome__illustration
+                      img(src="./assets/img/artifact-parts/illustration.png", alt="")
+                    .parts-welcome__text.parts-welcome__text_2
+                      p Количество шагов ограничено, поэтому не спеши с ходом. Чем длиннее будет ряд, тем больше баллов ты получишь.
+                    .parts-welcome__button 
+                      button#button-game-start.btn.--texture.--big Начать задание
+                  #block-game.artifact-parts__game.game-artifacts
+                    .game-artifacts__counting.counting
+                      .counting__item.counting__item_score
+                        .counting__name Баллов набрано
+                        .counting__number 
+                          span 0
+                      .counting__item.counting__item_progress
+                        .counting__name Осталось ходов
+                        .counting__number 
+                          span 32
+                    .game-artifacts__content 
+                      .game-artifacts__backdrop
+                      .game-artifacts__items
+                        .artifacts-row
+                          .artifact
+                            .artifact__backdrop.--type-1
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/jetpack.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-2
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/crystal.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-3
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/binoculars.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-1
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-4
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/rocket.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-2
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-3
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-4 
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/rocket.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-1
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-4
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                        .artifacts-row
+                          .artifact
+                            .artifact__backdrop.--type-5
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/jetpack.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-6
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-6
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/binoculars.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-7
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/crystal.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-8
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-5
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/rocket.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-7
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-5
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/rocket.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-8
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-1
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                        
+                        .artifacts-row
+                          .artifact
+                            .artifact__backdrop.--type-8
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-7
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/crystal.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-6
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-5
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-5
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/rocket.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-8
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/crystal.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-7
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-8
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/jetpack.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-6
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/jetpack.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-7
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/crystal.png", alt="")
+                        .artifacts-row
+                          .artifact
+                            .artifact__backdrop.--type-3
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/rocket.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-3
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/rocket.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-4
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/jetpack.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-1
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/crystal.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-3
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/rocket.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-2
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-4
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/rocket.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-1
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-2
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-2
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                        .artifacts-row
+                          .artifact
+                            .artifact__backdrop.--type-1
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/crystal.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-4
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-1
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/crystal.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-4
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-2
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/binoculars.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-3
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-2
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/rocket.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-1
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-3
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/binoculars.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-4
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/molecule.png", alt="")
+                        .artifacts-row
+                          .artifact
+                            .artifact__backdrop.--type-5
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/crystal.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-6
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-8
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/jetpack.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-7
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-8
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/crystal.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-5
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/binoculars.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-6
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/jetpack.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-7
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/binoculars.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-5
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/rocket.png", alt="")
+                          .artifact
+                            .artifact__backdrop.--type-6
+                            .artifact__image 
+                              img(src="./assets/img/artifacts/badge.png", alt="")
+              #block-termination.artifact-parts__block.artifact-parts__block_termination.is-blue
+                .game-termination
+                  .game-termination__astronaut
+                  .game-termination__block.game-termination__block_1 
+                    .game-termination__message.game-termination__message_1.block-message
+                      .block-message__text 
+                        p Ты не выполнил второе задание. Возвращайся скорее, чтобы пройти его и заработать больше баллов!
+                      .block-message__button
+                        button.button.btn.--normal.--texture#button-return Вернуться к заданию
+                      .block-message__button
+                        a.button.btn.--default.--border Выйти из задания
+
+
+        

@@ -1,0 +1,27 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Планета Корпорулия_Широтус_Приветствие'
+  - var bodyClass = ''
+block content
+  .body-container
+    .page__border
+      include _includes/blocks/preloader
+      .page.page-main-latitudeus(data-scrollbar)
+        .page-content(fade-in-preloader)
+          +header-back('Вернуться к карте планет')
+          section.corporulia.corporulia_latitudeus(fade-in-preloader)
+            .corporulia__title
+              h1.h1 Корпорулия
+            .corporulia__blocks
+              .corporulia__block.latitudeus.is-active
+                .latitudeus__character.latitudeus__character_main.character.character_latitudeus(data-state="normal")
+                  .character__inner
+                    a.character__link(href="") 
+                      img.character__image.character__image_normal(src="./assets/img/characters/latitudeus/normal.png", alt="")
+                .latitudeus__blocks
+                  .latitudeus__block.latitudeus__block_task_3.is-active(data-message="1")
+                      .latitudeus__message.latitudeus__message_task_3.block-message
+                        .block-message__content
+                          .block-message__text
+                            p Ты использовал все попытки в&nbsp;этом задании. Мы засчитаем лучший результат и обновим твое место в рейтинге.

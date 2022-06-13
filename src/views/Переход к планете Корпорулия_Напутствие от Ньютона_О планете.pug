@@ -1,0 +1,63 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Переход к планете Корпорулия_Напутствие от Ньютона_О планете'
+  - var bodyClass = ''
+block content
+  .body-container
+    .page__border
+      include _includes/blocks/preloader
+      .page.page-main-bg(data-scrollbar)
+        .page-content(fade-in-preloader)
+          section.planet
+            .planet__image
+              img(src="./assets/img/planet/planet.png", alt="")
+              .planet__name
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M 0,50 a 50,50 0 1,1 0,1 z" id="planet-start-name" fill="none"/><text><textPath xlink:href="#planet-start-name">Корпорулия</textPath></text></svg>
+            .planet__astronaut
+              img(src="./assets/img/planet/astronaut.png", alt="")
+            .planet__blocks
+              .planet__block.planet__block_1.is-active(data-message="1")
+                .planet__message.planet__message_1.block-message
+                  .block-message__content
+                    .block-message__text
+                      p Ты отправляешься на Корпорулию, планету корпоративных правил ПСБ. Здесь тебе предстоит получить Кристалл знаний — он станет ключом зажигания для нашей ракеты.
+                    .block-message__crystal 
+                      img(src="./assets/img/planet/crystal.png", alt="")
+                .planet__button.planet__button_1.block-button
+                  .block-button__content
+                    .block-button__btn-link.btn-link(data-message-next="2")
+                      span Хорошо. С чего мне начать?
+              .planet__block.planet__block_2(data-message="2")
+                .planet__message.planet__message_2.block-message
+                  .block-message__content
+                    .block-message__text
+                      p Тебе нужно познакомиться с местными жителями...
+                    .block-message__inhabitants
+                      .block-message__inhabitants-item
+                        .block-message__inhabitants-image
+                          img(src="./assets/img/planet/inhabitants/answers.png", alt="")
+                        .block-message__inhabitants-title Ответусы
+                      .block-message__inhabitants-item
+                        .block-message__inhabitants-image
+                          img(src="./assets/img/planet/inhabitants/edinuses.png", alt="")
+                        .block-message__inhabitants-title Единусы
+                      .block-message__inhabitants-item
+                        .block-message__inhabitants-image
+                          img(src="./assets/img/planet/inhabitants/latitudes.png", alt="")
+                        .block-message__inhabitants-title Широтусы
+                .planet__message.planet__message_3.block-message
+                  .block-message__content
+                    .block-message__text
+                      p ...и выполнить два задания.
+                    .block-message__tasks
+                      .block-message__tasks-item.block-message__tasks-item_1
+                        img(src="./assets/img/planet/corporulian-code.png", alt="")
+                      .block-message__tasks-item.block-message__tasks-item_2
+                        img(src="./assets/img/planet/artifact-parts.png", alt="")
+                .planet__button.planet__button_2.block-button
+                  .block-button__content
+                    a.block-button__btn-link.btn-link(href="corporulia.html")
+                      span Понял! Поехали!
+
+              

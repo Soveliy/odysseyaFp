@@ -1,0 +1,69 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Планета Корпорулия_Кодекс Корпорулийца_О жителях планеты'
+  - var bodyClass = ''
+block content
+  .body-container
+    .page__border
+      include _includes/blocks/preloader
+      .page.page-main-edinuses(data-scrollbar)
+        .page-content(fade-in-preloader)
+          +header-back('Вернуться назад')
+          section.corporulia.corporulia_edinuses(fade-in-preloader)
+            .corporulia__title
+              h1.h1 Корпорулия
+            .corporulia__blocks
+              .corporulia__block.edinuses.is-active
+                .edinuses__character.edinuses__character_main.character.character_edinuses(data-state="normal")
+                  .character__inner
+                    a.character__link(href="")
+                      img.character__image.character__image_disabled(src="./assets/img/characters/edinuses/disabled.png", alt="")
+                      img.character__image.character__image_normal(src="./assets/img/characters/edinuses/normal.png", alt="")
+                      img.character__image.character__image_active(src="./assets/img/characters/edinuses/active.png", alt="")
+                .edinuses__blocks
+                  .edinuses__block.edinuses__block_about_1.is-active(data-message="1")
+                    .edinuses__message.edinuses__message_about_1.block-message
+                      .block-message__content
+                        .block-message__text
+                          p На нашей планете живут разные народы. Но всех нас объединяет желание сделать ее лучшим домом во&nbsp;всей Галактике. 
+                    .edinuses__button.edinuses__button_about_1.block-button
+                      .block-button__content
+                        .block-button__button
+                          .block-button__btn-link.btn-link(data-message-next="2")
+                            span Прекрасное желание!
+                  .edinuses__block.edinuses__block_about_2(data-message="2")
+                    .edinuses__message.edinuses__message_about_2.block-message
+                      .block-message__content
+                        .block-message__text
+                          p Для этого мы создали «Кодекс Корпорулийца». В нем собраны принципы жизни всех трех народов. Каждый корпорулиец их знает и чтит.
+                    .edinuses__button.edinuses__button_about_2.block-button
+                      .block-button__content
+                        .block-button__button
+                          .block-button__btn-link.btn-link(data-message-next="3")
+                            span Это вы классно придумали!
+                  .edinuses__block.edinuses__block_about_3(data-message="3")
+                    .edinuses__message.edinuses__message_about_3.block-message
+                      .block-message__content
+                        .block-message__text
+                          p Во втором задании мы проверим, разделяешь ли ты наши принципы. Только настоящий корпорулиец достоин получить Кристалл знаний.
+                        .block-message__crystal 
+                          img(src="./assets/img/planet/crystal.png", alt="") 
+                    .edinuses__button.edinuses__button_about_3.block-button
+                      .block-button__content
+                        .block-button__button
+                          .block-button__btn-link.btn-link(data-message-next="4")
+                            span Хорошо бы подготовиться к&nbsp;заданию...
+                  .edinuses__block.edinuses__block_about_4(data-message="4")
+                    .edinuses__message.edinuses__message_about_4.block-message
+                      .block-message__content
+                        .block-message__text
+                          p Ты нам нравишься, так что лови подсказку: чтобы подготовиться к&nbsp;вопросам, <a href="">загляни в «Кодекс Корпорулийца»</a> . Удачи!
+                    .edinuses__button.edinuses__button_about_4.block-button
+                      .block-button__content
+                        .block-button__text
+                          p Спасибо, Единусы! <br>Я все прочитал. Поехали!
+                        .block-button__button
+                          +link-normal('Начать задание', '#')
+
+            

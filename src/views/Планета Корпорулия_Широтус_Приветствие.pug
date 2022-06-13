@@ -1,0 +1,58 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Планета Корпорулия_Широтус_Приветствие'
+  - var bodyClass = ''
+block content
+  .body-container
+    .page__border
+      include _includes/blocks/preloader
+      .page.page-main-latitudeus(data-scrollbar)
+        .page-content(fade-in-preloader)
+          +header-back('Вернуться назад')
+          section.corporulia.corporulia_latitudeus(fade-in-preloader)
+            .corporulia__title
+              h1.h1 Корпорулия
+            .corporulia__blocks
+              .corporulia__block.latitudeus.is-active
+                .latitudeus__character.latitudeus__character_main.character.character_latitudeus(data-state="normal")
+                  .character__inner
+                    a.character__link(href="") 
+                      img.character__image.character__image_normal(src="./assets/img/characters/latitudeus/normal.png", alt="")
+                .latitudeus__blocks 
+                  .latitudeus__block.latitudeus__block_welcome.is-active(data-message="1")
+                      .latitudeus__message.latitudeus__message_welcome.block-message
+                        .block-message__content
+                          .block-message__text
+                            p Привет! В первом испытании тебе нужно проявить внимательность и скорость реакции.
+                      .latitudeus__button.latitudeus__button_welcome.block-button
+                        .block-button__content
+                          .block-button__btn-link.btn-link(data-message-next="2")
+                            span И с тем и с другим у меня полный порядок! <br>Что нужно делать?
+                  .latitudeus__block.latitudeus__block_artifacts(data-message="2")
+                      .latitudeus__message.latitudeus__message_artifacts.block-message
+                        .block-message__content
+                          .block-message__text
+                            p Собирай в ряд минимум 3 одинаковых  символа. Чем больше баллов наберешь за ограниченное число ходов — тем лучше!
+                          .block-message__artifacts
+                            .block-message__artifacts-item.block-message__artifacts-item_1
+                              img(src="./assets/img/corporulia/latitudeus/artifacts/1.png", alt="")
+                            .block-message__artifacts-item.block-message__artifacts-item_2
+                              img(src="./assets/img/corporulia/latitudeus/artifacts/2.png", alt="")
+                            .block-message__artifacts-item.block-message__artifacts-item_3
+                              img(src="./assets/img/corporulia/latitudeus/artifacts/3.png", alt="")
+                            .block-message__artifacts-item.block-message__artifacts-item_4
+                              img(src="./assets/img/corporulia/latitudeus/artifacts/4.png", alt="")
+                            .block-message__artifacts-item.block-message__artifacts-item_5
+                              img(src="./assets/img/corporulia/latitudeus/artifacts/5.png", alt="")
+                            .block-message__artifacts-item.block-message__artifacts-item_6
+                              img(src="./assets/img/corporulia/latitudeus/artifacts/6.png", alt="")
+
+                      .latitudeus__button.latitudeus__button_ready.block-button
+                        .block-button__content
+                          .block-button__text
+                            p Я готов!
+                          .block-button__button
+                            +link-normal('Перейти к заданию', 'artifact_parts.html')
+
+            

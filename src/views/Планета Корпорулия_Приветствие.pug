@@ -1,0 +1,78 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Планета Корпорулия_Приветствие'
+  - var bodyClass = ''
+block content
+  .body-container
+    .page__border
+      include _includes/blocks/preloader
+      .page.page-main-bg(data-scrollbar)
+        .page-content(fade-in-preloader)
+          +header-back('Вернуться к карте планет')
+          section.corporulia.corporulia_main
+            .corporulia__layer
+              .corporulia__layer-bg.corporulia__layer-bg_1
+            .corporulia__title
+              h1.h1 Корпорулия
+            .corporulia__blocks
+              .corporulia__block.answerus.is-active
+                .answerus__character.character.character_answerus(data-state="active")
+                  .character__inner
+                    img.character__image.character__image_disabled(src="./assets/img/characters/answerus/disabled.png", alt="")
+                    img.character__image.character__image_normal(src="./assets/img/characters/answerus/normal.png", alt="")
+                    img.character__image.character__image_active(src="./assets/img/characters/answerus/active.png", alt="")
+                .answerus__blocks
+                  .answerus__block.answerus__block_1.is-active(data-message="1")
+                    .answerus__message.answerus__message_1.block-message
+                      .block-message__content
+                        .block-message__text
+                          p Привет! Мы рады приветствовать тебя на Корпорулии. Здесь живут три народа: ответусы, единусы, широтусы.
+                          p Каждый помогает планете развиваться, поэтому мы очень ценим друг друга и не&nbsp;ссоримся.
+                    .answerus__button.answerus__button_1.block-button
+                      .block-button__content
+                        .block-button__btn-link.btn-link(data-message-next="2")
+                          span Ого, как здорово!
+                  .answerus__block.answerus__block_2(data-message="2")
+                    .answerus__message.answerus__message_2.block-message
+                      .block-message__content
+                        .block-message__text
+                          p Единусы поддерживают командный дух, широтусы осваивают новые знания и технологии, а мы, ответусы, распределяем ресурсы на планете и следим за ее процветанием.
+                    .answerus__button.answerus__button_2.block-button
+                      .block-button__content
+                        .block-button__btn-link.btn-link(data-message-next="3")
+                          span Как здорово! Я знаю, что на вашей планете хранится Кристалл знаний. Он нужен мне для ракеты. Можешь помочь найти его?
+                  .answerus__block.answerus__block_3(data-message="3")
+                    .answerus__message.answerus__message_3.block-message
+                      .block-message__content
+                        .block-message__text
+                          p Конечно, могу. Но мы не отдадим его просто так — сначала тебе нужно выполнить 2 задания.
+                    .answerus__button.answerus__button_3.block-button
+                      .block-button__content
+                        .block-button__btn-link.btn-link(data-message-next="4" data-visible-latitudeus)
+                          span Какие задания?
+                  .answerus__block.answerus__block_4(data-message="4")
+                    .answerus__message.answerus__message_4.block-message
+                      .block-message__content
+                        .block-message__text
+                          p Отправляйся к Широтусу — он обо всем расскажет.
+                    .answerus__button.answerus__button_4.block-button
+                      .block-button__content
+                        .block-button__btn-link.btn-link(data-message-close data-move-latitudeus)
+                          span Уже лечу!
+              .corporulia__block.latitudeus
+                .latitudeus__layer.latitudeus__layer_normal
+                .latitudeus__layer.latitudeus__layer_active
+                .latitudeus__character.character.character_latitudeus(data-state="disabled" data-character-hover data-character-hover-layer=".latitudeus__layer_active")
+                  .character__inner
+                    a.character__link(href="latitudeus.html") 
+                      img.character__image.character__image_disabled(src="./assets/img/characters/latitudeus/disabled.png", alt="")
+                      img.character__image.character__image_normal(src="./assets/img/characters/latitudeus/normal.png", alt="")
+                      img.character__image.character__image_active(src="./assets/img/characters/latitudeus/active.png", alt="")
+              .corporulia__block.edinuses
+                .edinuses__character.character.character_edinuses(data-state="disabled")
+                  .character__inner
+                    a.character__link(href="")
+                      img.character__image.character__image_disabled(src="./assets/img/characters/edinuses/disabled.png", alt="")
+                      img.character__image.character__image_normal(src="./assets/img/characters/edinuses/normal.png", alt="")
+                      img.character__image.character__image_active(src="./assets/img/characters/edinuses/active.png", alt="")

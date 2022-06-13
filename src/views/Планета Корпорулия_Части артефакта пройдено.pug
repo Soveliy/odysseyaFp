@@ -1,0 +1,54 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Планета Корпорулия_Части артефакта пройдено'
+  - var bodyClass = ''
+block content 
+  .body-container
+    .page__border
+      include _includes/blocks/preloader
+      .page.page-main-bg(data-scrollbar)
+        .page-content(fade-in-preloader)
+          +header-back('Вернуться к карте планет')
+          section.corporulia.corporulia_main
+            .corporulia__layer
+              .corporulia__layer-bg.corporulia__layer-bg_1
+            .corporulia__title
+              h1.h1 Корпорулия
+            .corporulia__blocks
+              .corporulia__block.answerus
+                .answerus__character.character.character_answerus(data-state="normal")
+                  .character__inner
+                    img.character__image.character__image_disabled(src="./assets/img/characters/answerus/disabled.png", alt="")
+                    img.character__image.character__image_normal(src="./assets/img/characters/answerus/normal.png", alt="")
+                    img.character__image.character__image_active(src="./assets/img/characters/answerus/active.png", alt="")
+              .corporulia__block.latitudeus
+                .latitudeus__layer.latitudeus__layer_normal.is-active
+                .latitudeus__layer.latitudeus__layer_active
+                .latitudeus__character.character.character_latitudeus(data-state="normal")
+                  .character__inner
+                    a.character__link(href="latitudeus.html") 
+                      img.character__image.character__image_disabled(src="./assets/img/characters/latitudeus/disabled.png", alt="")
+                      img.character__image.character__image_normal(src="./assets/img/characters/latitudeus/normal.png", alt="")
+                      img.character__image.character__image_active(src="./assets/img/characters/latitudeus/active.png", alt="")
+                
+              .corporulia__block.edinuses.is-active
+                .edinuses__layer.edinuses__layer_normal.is-active
+                .edinuses__layer.edinuses__layer_active
+                .edinuses__character.character.character_edinuses(data-state="normal")
+                  .character__inner
+                    a.character__link(href="")
+                      img.character__image.character__image_disabled(src="./assets/img/characters/edinuses/disabled.png", alt="")
+                      img.character__image.character__image_normal(src="./assets/img/characters/edinuses/normal.png", alt="")
+                      img.character__image.character__image_active(src="./assets/img/characters/edinuses/active.png", alt="")
+                .edinuses__blocks
+                  .edinuses__block.edinuses__block_mission(data-message="1")
+                    .edinuses__message.edinuses__message_mission.block-message
+                      .block-message__content
+                        .block-message__text
+                          p Ждем тебя, чтобы рассказать про второе задание!
+                    .edinuses__button.edinuses__button_mission.block-button
+                      .block-button__content
+                        .block-button__button
+                          a.block-button__btn-link.btn-link(href="edinuses.html")
+                            span Уже бегу!
