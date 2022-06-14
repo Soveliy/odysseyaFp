@@ -3236,8 +3236,8 @@ $offset1200: 600px;
         position: absolute;
         right: 201px;
         bottom: 140px;
-        padding: 40px 35px 0 46px;
-        width: 330px;
+        padding: 31px 40px 0 46px;
+        width: 404px;
         height: 147px;
         transform: translateY(200px);
         opacity: 0;
@@ -3256,8 +3256,8 @@ $offset1200: 600px;
         }
 
         &::before {
-            top: -28px;
-            left: -38px;
+            top: -30px;
+            left: -30px;
             background-color: transparent;
         }
 
@@ -3268,10 +3268,11 @@ $offset1200: 600px;
 
         &_1 {
             &::before {
-                width: 410px;
-                height: 227px;
-                background-image: url("../img/corporulian-code/get-artifact/message_1.svg"); 
-
+                width: 443px;
+                height: 302px;
+                background-image: url("../img/corporulian-code/get-artifact/message_1_new.svg"); 
+                // top: -34px;
+                // left: -69px;
                 @include media {
                     width: 390px;
                     top: -17px;
@@ -3324,9 +3325,9 @@ $offset1200: 600px;
         z-index: 50;
         right: 0;
         bottom: 0;
-        width: 342px;
-        height: 225px;
-        background: url("../img/corporulian-code/get-artifact/astronaut.png") 0 0 no-repeat; 
+        width: 382px;
+        height: 343px;
+        background: url("../img/corporulian-code/get-artifact/astronaut_new.png") 0 0 no-repeat; 
         background-size: 100% auto;
         transition: $transition opacity;
         opacity: 0;

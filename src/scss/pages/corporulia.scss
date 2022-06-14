@@ -109,8 +109,8 @@
 .answerus {
     &__character {
         left: 50%;
-        bottom: -5%;
-        margin-left: -47%;
+        bottom: -6%;
+        margin-left: -46.8%;
         width: 28.75%;
 
         @include media {
@@ -156,8 +156,8 @@
         }
 
         &_1 {
-            bottom: 11px;
-            margin-left: 90px;
+            bottom: 18px;
+            margin-left: 95px;
 
             @include media {
                 bottom: 73px;
@@ -206,8 +206,8 @@
         }
 
         &_task_2 {
-            margin-bottom: -47px;
-            margin-left: 85px;
+           margin-bottom: -17px;
+            margin-left: 80px;
             width: 438px;
 
             @include media {
@@ -218,7 +218,7 @@
         }
 
         &_task_3 {
-            margin-left: 85px;
+            margin-left: 82px;
             margin-bottom: 7px;
 
             @include media {
@@ -229,7 +229,7 @@
     }
 
     &__message {
-        padding: 52px 25px 0 61px;
+        padding: 50px 33px 0 52px;
 
         &::before {
             top: -28px;
@@ -352,7 +352,7 @@
         &_task_2 {
             width: 360px;
             height: 147px;
-            padding: 27px 20px 0 40px;
+            padding: 27px 20px 0 46px;
 
             &::before {
                 width: 440px;
@@ -400,11 +400,14 @@
     &__button {
         margin-left: auto;
         padding: 14px 21px 18px;
-        margin-right: 4px;
-        margin-top: 11px;
-        transform: skew(-8deg); 
+        margin-right: 78px;
+        margin-top: 23px;
+        transform: skew(-8deg);
+        margin-bottom: -12px;
+    
 
         @include media {
+            margin-bottom: 0;
             transform: skew(-6deg);
         }
 
@@ -477,26 +480,40 @@
             max-width: 296px;
             margin-top: 17px;
             padding: 12px 11px 18px 21px;
-
+            margin-top: 30px;
+            margin-left: 56px;
+            margin-bottom: -13px;
             .block-button__button {
+                padding-top: 8px;
                 .btn {
                     height: 40px;
                     font-size: 16px;
+                    max-width: 246px;
+                    width: 100%;
                 }
             }
 
             @include media {
-                
+                margin-top: 15px;
+                margin-bottom: 0;
+                margin-left: auto;
             }
         }
 
         &_task_3 {
-            margin-right: -12px;
-            margin-top: 18px;
+            margin-right: -13px;
+            margin-top: 28px;
             padding-right: 16px;
+            margin-bottom: -8px;
+            @include media {
+                margin-top: 15px;
+                margin-bottom: 0;
+              
+            }
 
             .block-button__button {
                 .btn {
+                    padding: 0 17px;
                     height: 40px;
                     font-size: 16px;
                 }
@@ -622,7 +639,7 @@
         }
 
         &_task_1 {
-            margin-top: 45px;
+            margin-top: 18px;
 
             @include media {
                 margin-top: 46px;
@@ -631,8 +648,8 @@
         }
 
         &_task_2 {
-            margin-top: 22px;
-            margin-left: -21px;
+            margin-top: 0px;
+            margin-left: -34px;
 
             @include media {
                 margin-top: 34px;
@@ -640,8 +657,8 @@
             }
         }
         &_task_3 {
-            margin-top: -3px;
-            margin-left: 10px;
+            margin-top: -23px;
+            margin-left: 5px;
 
             @include media {
                 margin-top: 8px;
@@ -651,8 +668,8 @@
 
         &_task_4,
         &_task_5 {
-            margin-top: -56px;
-            margin-left: -125px;
+            margin-top: -65px;
+            margin-left: -137px;
 
             @include media {
                 margin-top: -36px;
@@ -661,18 +678,19 @@
         }
 
         &_artifacts {
-            margin-left: -100px;
+            margin-left: -135px;
+            margin-top: -32px;
 
         
             @include media {
                 margin-left: -50px;
+                margin-top: 0;
             }
         }
     }
 
     &__message {
-        padding: 50px 13px 0 36px;
-
+        padding: 48px 22px 0 39px;
         &::before {
             top: -28px;
             left: -38px;
@@ -682,7 +700,8 @@
         &_welcome {
             width: 339px;
             height: 143px;
-            margin-left: 93px - 42px;
+            margin-left: 35px;
+            margin-top: -13px;
             
             &::before {
                 left: -41px;
@@ -730,7 +749,7 @@
             
             width: 305px;
             height: 130px;
-            padding: 44px 25px 0 34px;
+            padding: 37px 13px 0 48px;
             margin-left: 34px;
 
             &::before {
@@ -830,10 +849,13 @@
     }
 
     &__button {
-        margin-top: 8px;
+        margin-top: 28px;
+        margin-left: -31px;
         max-width: 260px;
         transform: skew(-8deg); 
-
+        @include media{
+            margin-left: 0;
+        }
         .block-button__content {
             transform: skew(8deg);
         }
@@ -850,8 +872,11 @@
 
         &_ready {
             padding: 11px 13px 25px 27px;
-            margin-left: -52px;
+            margin-left: -12px;
+            .block-button__button{
 
+                padding-top: 11px;
+            }
             @include media {
                 margin-top: 15px;
                 padding-left: 22px;
@@ -862,7 +887,8 @@
         &_task_1 {
             margin-left: -20px;
             padding: 12px 13px 16px 24px;
-
+            margin-left: -30px;
+            margin-top: 40px;
             @include media {
                 margin-left: 0;
                 padding: 14px 12px 16px 23px;
@@ -872,6 +898,15 @@
                     padding-top: 5px;
                 }
             }
+        }
+        &_task_2{
+            margin-top: 50px;
+            margin-left: -135px;
+        }
+        &_task_4,&_task_5{
+            margin-left: auto;
+            margin-right: 18px;
+            margin-top: 10px;
         }
     }
 
@@ -947,8 +982,8 @@
         position: absolute;
         width: 430px;
         left: 50%;
-      top: 218px;
-    margin-left: -637px;
+        top: 218px;
+        margin-left: -637px;
         transform: translateY(200px);
         opacity: 0;
         transition: 0.8s opacity, 0.8s transform;
@@ -970,8 +1005,8 @@
         }
 
         &_mission {
-            margin-top: 141px;
-            margin-left: -201px;
+            margin-top: 125px;
+            margin-left: -199px;
 
             @include media {
                 margin-top: 132px;
@@ -1018,8 +1053,8 @@
         }
 
         &_task_1 {
-            margin-top: -32px;
-            margin-left: -568px;
+            margin-top: -19px;
+            margin-left: -586px;
 
             @include media {
                 margin-top: -79px;
@@ -1028,8 +1063,8 @@
         }
 
         &_task_2 {
-            margin-top: 143px;
-            margin-left: -676px;
+            margin-top: -34px;
+            margin-left: -650px;
 
             @include media {
                 margin-top: 0;
@@ -1299,7 +1334,7 @@
 
         &_task_2 {
             margin-top: 16px;
-
+            margin-left: 36px;
             .btn.--normal {
                 height: 40px;
                 font-size: 16px;

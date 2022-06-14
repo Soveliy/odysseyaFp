@@ -831,11 +831,11 @@ $widthArtifactSmall: 96px;
         position: absolute;
         left: 47px;
         bottom: 0px;
-        width: 636px;
-        height: 426px;
+        width: 395px;
+        height: 376px;
         background: url("../img/artifact-parts/termination/astronaut.png") 0 0 no-repeat;
         background-size: 100%;
-
+        left: 214px;
         @include media {
             width: 530px;
             bottom: -125px;
@@ -897,7 +897,7 @@ $widthArtifactSmall: 96px;
 
         &::before {
             top: -28px;
-            left: -38px;
+            left: -36px;
             background-color: transparent;
         }
 
@@ -1019,9 +1019,9 @@ $widthArtifactSmall: 96px;
         &_4 {
             width: 425px;
             height: 259px;
-            padding-top: 47px;
-            padding-left: 60px;
-            padding-right: 65px;
+            padding-top: 51px;
+            padding-left: 94px;
+            padding-right: 44px;
 
             &::before {
                 width: 501px;
@@ -1044,17 +1044,19 @@ $widthArtifactSmall: 96px;
         &_5 {
             width: 430px;
             height: 204px;
-            padding-top: 50px;
-            padding-left: 83px;
-            padding-right: 34px;
+            padding-top: 53px;
+            padding-left: 119px;
+            padding-right: 3px;
             margin-top: 8px;
             margin-left: -23px;
+           
             
             &::before {
-                width: 510px;
+                width: 528px;
                 height: 286px;
                 background-image: url("../img/artifact-parts/termination/message_5.svg");
-
+                left: -6px;
+                top: -30px;
                 @include media {
                     width: 450px;
                     top: -18px;
@@ -1277,7 +1279,7 @@ $widthArtifactSmall: 96px;
             background: url("../img/corporulia/latitudeus/bg-page.jpg") no-repeat center / cover;
 
             .game-termination__astronaut {
-                left: 8px;
+                left: 214px;
             }
         }
     }
