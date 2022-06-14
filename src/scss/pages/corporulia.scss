@@ -947,8 +947,8 @@
         position: absolute;
         width: 430px;
         left: 50%;
-        top: 197px;
-        margin-left: -617px;
+      top: 218px;
+    margin-left: -637px;
         transform: translateY(200px);
         opacity: 0;
         transition: 0.8s opacity, 0.8s transform;
@@ -987,8 +987,8 @@
         }
 
         &_about_2 {
-            margin-top: 114px;
-            margin-left: -601px;
+            margin-top: 2px;
+            margin-left: -611px;
 
             @include media {
                 margin-top: 10px;
@@ -997,8 +997,9 @@
         }
 
         &_about_3 {
-            margin-top: 103px;
-            margin-left: -584px;
+            margin-top: -73px;
+            margin-left: -592px;
+        
 
             @include media {
                 margin-top: 29px;
@@ -1250,8 +1251,8 @@
         }
 
         &_about_3 {
-            margin-left: -52px;
-            margin-top: 16px;
+            margin-left: -21px;
+            margin-top: 30px;
             padding-right: 15px;
             max-width: 250px;
 

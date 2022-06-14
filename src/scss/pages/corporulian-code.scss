@@ -372,7 +372,7 @@
             left: -50px;
             width: 1063px;
             height: 736px;
-            background: url("../img/corporulian-code/welcome/backdrop.svg") 0 0 no-repeat;
+            background: url("../img/corporulian-code/welcome/backdrop_new.svg") 0 0 no-repeat;
             background-size: 100% auto;
 
             @include media {
@@ -643,8 +643,8 @@
     &_2 {
         width: 381px;
         height: 160px;
-        bottom: 148px;
-        margin-left: -486px;
+        margin-left: -475px;
+        bottom: 187px;
        
         &::before {
             width: 460px;
@@ -657,8 +657,8 @@
                 height: 291px;
                 left: 100%;
                 top: 0px;
-                margin-top: 18px;
-                margin-left: -29px;
+                margin-top: 60px;
+                margin-left: -36px;
             }
         }
     }

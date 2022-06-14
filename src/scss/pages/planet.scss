@@ -310,7 +310,7 @@
         z-index: 100;
         pointer-events: none;
         width: 410px; 
-        margin-left: 315px;
+        margin-left: 350px;
         transform: translateX(-50%);
 
         img {
@@ -319,7 +319,7 @@
 
         @include media {
             width: 340px;
-            bottom: -42px;
+            bottom: 0;
         }
     }
 
