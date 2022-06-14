@@ -79,7 +79,7 @@ export const prod = series(
     'views',
     'styles',
     'scripts',
-    //'images',
+    'images',
     //'webp'
 );
 
