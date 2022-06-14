@@ -12,4 +12,3 @@ node_modules
 yarn.lock
 nbproject
 _docs
-dist
