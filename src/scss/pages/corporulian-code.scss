@@ -3267,6 +3267,9 @@ $offset1200: 600px;
         }
 
         &_1 {
+            @include media{
+                padding: 31px 48px 0 55px;
+            }
             &::before {
                 width: 443px;
                 height: 302px;
@@ -3274,9 +3277,10 @@ $offset1200: 600px;
                 // top: -34px;
                 // left: -69px;
                 @include media {
-                    width: 390px;
-                    top: -17px;
-                    left: -33px;
+                    width: 377px;
+                    top: -35px;
+                    left: -39px;
+                    background-image: url("../img/corporulian-code/get-artifact/message_1_1200.svg"); 
                 }
             }
 
@@ -3296,7 +3300,9 @@ $offset1200: 600px;
             padding-left: 28px;
             padding-top: 36px;
             padding-right: 24px;
-
+            @include media{
+                padding-left: 60px;
+            }
             &::before {
                 width: 457px;
                 height: 200px;
@@ -3306,6 +3312,9 @@ $offset1200: 600px;
                     width: 380px;
                     margin-left: 11px;
                     margin-top: 10px;
+                    background-image: url("../img/corporulian-code/get-artifact/message_2_1200.svg"); 
+
+                    
                 }
             }
 
@@ -3337,10 +3346,10 @@ $offset1200: 600px;
         }
 
         @include media {
-            right: 3px;
-            bottom: -43px;
-            width: 280px;
-            height: 200px;
+            right: 15px;
+            bottom: 0;
+            width: 321px;
+            height: 248px;
         }
     }
 

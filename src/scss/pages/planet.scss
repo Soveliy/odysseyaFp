@@ -318,7 +318,7 @@
         }
 
         @include media {
-            width: 340px;
+            width: 256px;
             bottom: 0;
         }
     }
@@ -448,7 +448,7 @@
             width: 362px;
             height: 362px;
             margin-left: -136px;
-            bottom: 62px;
+            bottom: 138px;
         }
     }
 
@@ -458,6 +458,10 @@
             top: -28px;
             left: -40px;
             background-color: transparent;
+            @include media{
+                top: -26px;
+                left: -40px;
+            }
         }
 
         + .planet__message {
@@ -499,9 +503,11 @@
 
                 @include media {
                     //height: 268px;
-                    width: 452px;
-                    height: 264px; 
+                   
                     background-image: url("../img/planet/messages/message_2_1200.svg");
+
+                    width: 400px;
+                    height: 257px;
                 }
             }
 
