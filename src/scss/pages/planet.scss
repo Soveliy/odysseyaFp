@@ -108,6 +108,9 @@
         img {
             display: block;
         }
+        @include media(){
+            margin: 12px 0 0 -6px;
+        }
     }
 
     &__inhabitants {
@@ -318,8 +321,9 @@
         }
 
         @include media {
-            width: 256px;
+            width: 268px;
             bottom: 0;
+            
         }
     }
 
@@ -360,7 +364,7 @@
             padding-right: 7px;
 
             @include media {
-                bottom: 47px;
+                bottom: -25px;
             }
         }
 
@@ -487,6 +491,7 @@
 
             @include media {
                 height: 268px;
+                padding: 46px 42px 5px 40px;
             }
         }
 
@@ -553,7 +558,7 @@
     &__button {
         margin-top: 16px;
         align-self: flex-start;
-        
+        margin-left: 40px;
         &_2 {
             margin-left: 10px;
             
