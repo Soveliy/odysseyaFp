@@ -2353,7 +2353,7 @@ $offset1200: 600px;
         width: 606px;
         height: 320px;
         padding: 104px 64px 0;
-        margin: 123px auto 0;
+        margin: 113px auto 0;
         opacity: 0;
         transition: $transition opacity;
 
@@ -2900,7 +2900,7 @@ $offset1200: 600px;
         position: relative;
         z-index: 21;
         margin-bottom: 24px;
-        margin-top: 171px;
+        margin-top: 164px;
         padding-left: 4px;
         transition: $transition opacity;
         opacity: 0;
@@ -2945,6 +2945,7 @@ $offset1200: 600px;
         @include media {
             font-size: 14px;
             line-height: 1.428;
+            max-width: 450px;
         }
 
         p {
