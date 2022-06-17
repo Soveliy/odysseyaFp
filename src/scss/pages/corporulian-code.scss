@@ -622,7 +622,9 @@
         opacity: 0;
         //transition: $transition opacity;
     }
-
+    &__1{
+        
+    }
     &.is-active {
         pointer-events: auto;
         &::before {
